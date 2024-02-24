@@ -5,9 +5,6 @@ function getComputerChoice(){
         return options[random];
 }
 
-//variables for getComptuerChoice//
-
-
 //function to play one Round of the game//
 function playRound(computerChoice,playerChoice){
     if( computerChoice === playerChoice){
@@ -33,53 +30,41 @@ function playRound(computerChoice,playerChoice){
         return "Computer";
     }
 }
-//variables that are necessary for playROund function//
-let input = prompt("Enter Rock,paper or scissors:");
-let computerChoice = getComputerChoice();
-let playerChoice = input.toLowerCase();
-
 
 // function to play five rounds
 function playGame(){
-    let computerWins = 0;
+    let computerWins =0;
     let playerWins = 0;
+   for (let i = 1 ; i <=5; i++){
+    let input = prompt("Enter Rock,paper or scissors:");
+    let playerChoice = input.toLowerCase();
+    let computerChoice = getComputerChoice();
     let roundWinner = playRound(computerChoice,playerChoice);
-    for(let i=0;i<5;i++){
-
-       if( roundWinner === "Draw"){
-                computerWins += 1;
-                playerWins += 1;
-                console.log(`round ${i} Computer:${computerWins} and Player:${playerWins} ${roundWinner} ` );
-                let computerChoice = getComputerChoice;
-                console.log(computerChoice)
-                let input = prompt("Enter Rock,paper or scissors:");
-                let playerChoice = input.toLowerCase();              
-                roundWinner = playRound(computerChoice,playerChoice);
-         } 
-        else if (roundWinner === "Player"){
-                playerWins += 1;
-                console.log(`round ${i} Computer:${computerWins} and Player:${playerWins} ${roundWinner}` );
-                let computerChoice = getComputerChoice;
-                console.log(computerChoice)
-                let input = prompt("Enter Rock,paper or scissors:" );
-                let playerChoice = input.toLowerCase();
-                roundWinner = playRound(computerChoice,playerChoice);
-        }
-        else if (roundWinner === "Computer"){
-                computerWins += 1;
-                console.log(`round ${i} Computer:${computerWins} and Player:${playerWins} ${roundWinner}  ` );
-                let computerChoice = getComputerChoice;
-                console.log(computerChoice)
-                let input = prompt("Enter Rock,paper or scissors:" );
-                let playerChoice = input.toLowerCase();
-                roundWinner = playRound(computerChoice,playerChoice);
-            }
-        }
-    if( computerWins > playerWins){
-        return `GAME OVER Computer wins Computer: ${computerWins} and Player: ${playerWins} out of 5 rounds`;
-    }else if (playerWins > computerWins){
-        return `GAME OVER Player wins Player: ${playerWins} and  Computer: ${computerWins} out of 5 rounds`;
+    
+    if (roundWinner === 'Draw'){
+        computerWins +=1;
+        playerWins +=1;
+        console.log(`round ${i} : is Draw :  ${playerChoice} is the same as ${computerChoice}`);
+        
+    }else if (roundWinner === 'Player'){
+        playerWins +=1;
+        console.log(`round ${i} : is won by the Player: ${playerChoice} beats ${computerChoice}`);
+    }else if (roundWinner === 'Computer'){
+        computerWins +=1;
+        console.log(`round ${i} : is won by the Computer: ${computerChoice} beats ${playerChoice}`);
     }
+   }
+   if(computerWins > playerWins){
+     console.log(`Computer Won ${computerWins}  to ${playerWins}`);
+     console.log(`Reload the page to play again`);
+   }
+   else if(computerWins < playerWins){
+    console.log(`Player Won ${playerWins} to ${computerWins}`)
+    console.log(`Reload the page to play again`);
+   }else{
+    console.log('Game Ends in Draw Reload the page to play again')
+   }
+       
 }
 
-console.log(playGame())
+playGame();

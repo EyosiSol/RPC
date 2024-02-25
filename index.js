@@ -8,25 +8,18 @@ function getComputerChoice(){
 //function to play one Round of the game//
 function playRound(computerChoice,playerChoice){
     if( computerChoice === playerChoice){
-        // return (`you drew ${computerChoice} and ${playerChoice} are the same`) ;
         return "Draw";
     } else if ( playerChoice === 'rock' && computerChoice === 'scissors'){
-        // return (`you won ${playerChoice} beat ${computerChoice}`);
         return "Player";
     }else if ( playerChoice === 'rock' && computerChoice === 'paper'){
-        // return(`you lose ${computerChoice} beats ${playerChoice}`);
         return "Computer"
     }else if ( playerChoice === 'paper' && computerChoice === 'rock'){
-        // return (`you won ${playerChoice} beat ${computerChoice}`);
         return "Player"
     }else if ( playerChoice === 'paper' && computerChoice === 'scissors'){
-        // return (`you lose ${computerChoice} beats ${playerChoice}`);
         return "Computer"
     }else if ( playerChoice === 'scissors' && computerChoice === 'paper'){
-        // return (`you won ${playerChoice} beat ${computerChoice}`);
         return "Player";
     }else if ( playerChoice === 'scissors' && computerChoice === 'rock'){
-        // return (`you lose ${computerChoice} beats ${playerChoice}`);
         return "Computer";
     }
 }

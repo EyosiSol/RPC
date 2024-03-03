@@ -1,0 +1,70 @@
+*{
+    padding: 0px 20px;
+}
+body{
+    background-color: #282a36;
+    font-family: "Madimi One";
+    color: bisque;
+}
+.total{
+    display: flex;
+    flex-direction: column;
+    margin: -25px;
+    
+}
+.total .title{
+    font-size: 3rem;
+    align-self:center;
+    margin-bottom: 50px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: -25px;
+    
+}
+.choices {
+    display: flex;
+    flex-direction: column;
+}
+.choices .h3{
+    align-self: flex-start;
+    font-size: 1.8rem;
+    margin-top: -2px;
+}
+.container .choose{
+    display: flex;
+    flex-direction: column;
+    width: 100vh;
+    align-self: flex-start;
+    justify-content: space-between;
+
+}
+.rock #rock{
+    background-color: #282a36;
+    border-radius: 100%;
+    font-family: "Madimi One";
+    color: bisque;
+    width: 120px;
+   
+}
+.rock {
+    display: flex;
+    flex-direction: row;
+    width:40px;
+    margin: 10px;
+    margin-left: 40px;
+}
+.itemTitle{
+    padding-top: 45px;
+    margin-top: 1px;
+    align-self: center;
+    font-size: 1.6rem;
+}
+.rock #rock img{
+    margin-left: -27px;
+    width: 100px;
+    font-family: "Madimi One";
+
+}
+

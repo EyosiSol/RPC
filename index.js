@@ -23,7 +23,6 @@ function playRound(computerChoice,playerChoice){
         return "Computer";
     }
 }
-
 // function to play five rounds
 function playGame(){
     let computerWins =0;

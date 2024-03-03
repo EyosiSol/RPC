@@ -13,9 +13,32 @@ body{
     
 }
 .total .title{
-    font-size: 3rem;
+    font-size: 2.5rem;
     align-self:center;
     margin-bottom: 50px;
+}
+.contains{
+    margin-top: -25px;
+    display: flex;
+    justify-content: space-around;
+    border: 3px solid beige;
+    padding: 50px;
+    border-radius: 10px;
+}
+.results{
+    display: flex;
+    flex-direction: column;
+    margin-top: -26px;
+    margin-left: -50px;
+    border: 3px solid beige;
+    width: 800px;
+    border-radius: 50px;
+}
+.head{
+    margin-top:0px;
+    font-size: 1.7rem;
+    padding: 10px;
+    align-self: center;
 }
 .container{
     display: flex;
@@ -67,4 +90,10 @@ body{
     font-family: "Madimi One";
 
 }
-
+.span{
+    font-size: 1.4rem;
+}
+.winner{
+    font-size: 1.7rem;
+    margin-top: 40px;
+}

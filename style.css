@@ -63,7 +63,7 @@ body{
     justify-content: space-between;
 
 }
-.rock #rock{
+.rock .btn{
     background-color: #282a36;
     border-radius: 100%;
     font-family: "Madimi One";
@@ -84,7 +84,7 @@ body{
     align-self: center;
     font-size: 1.6rem;
 }
-.rock #rock img{
+.rock .btn img{
     margin-left: -27px;
     width: 100px;
     font-family: "Madimi One";
@@ -95,5 +95,5 @@ body{
 }
 .winner{
     font-size: 1.7rem;
-    margin-top: 40px;
+    margin-top: 0px;
 }

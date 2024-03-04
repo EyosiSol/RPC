@@ -1,7 +1,5 @@
 const buttonValues = {}; // Create an empty object
-
 const buttons = document.querySelectorAll(".btn"); // Select all buttons with class "btn"
-
 function getComputerChoice() {
   let random = Math.floor(Math.random() * 3);
   const options = ["rock", "paper", "scissors"];
@@ -13,46 +11,41 @@ let computerChoice = getComputerChoice();
 buttons.forEach((button) => {
   button.addEventListener("click", function () {
     buttonValues[this.id] = this.value; // Update object with button value (if buttons have IDs)
+    let input = this.value;
     const span = document.querySelector(".span");
+    const winner = document.querySelector(".winner");
 
-    function playGame() {
-      let computerWins = 0;
-      let playerWins = 0;
-      for (let i = 1; i <= 5; i++) {
-        let input = this.value;
+    let computerWins = 0;
+    let playerWins = 0;
+    
+    for (let i = 1; i <= 5; i++) {
         let playerChoice = input.toLowerCase();
         let computerChoice = getComputerChoice();
         let roundWinner = playRound(computerChoice, playerChoice);
         if (roundWinner === "Draw") {
-          computerWins += 1;
-          playerWins += 1;
-          span.textContent = 
-            `round ${i} : is Draw : ${playerChoice} is the same as ${computerChoice}`
+            computerWins += 1;
+            playerWins += 1;
+            span.textContent +=  `\n round ${i} : is Draw : ${playerChoice} is the same as ${computerChoice}`;
           
         } else if (roundWinner === "Player") {
           playerWins += 1;
-          span.textContent = 
-            `round ${i} : is won by the Player: ${playerChoice} beats ${computerChoice}`
+          span.textContent += ` \n round ${i} : is won by the Player: ${playerChoice} beats ${computerChoice}`
     
         } else if (roundWinner === "Computer") {
           computerWins += 1;
-          span.textContent = 
-            `round ${i} : is won by the Computer: ${computerChoice} beats ${playerChoice}`
-          
+          span.textContent += ` \n round ${i} : is won by the Computer: ${computerChoice} beats ${playerChoice}`
         }
       }
       if (computerWins > playerWins) {
-        console.log(`Computer Won ${computerWins} to ${playerWins}`);
-        console.log(`Reload the page to play again`);
+        winner.textContent = (`Computer Won ${computerWins} to ${playerWins}`);
+        winner.textContent += (`\n Reload the page to play again`);
       } else if (computerWins < playerWins) {
-        console.log(`Player Won ${playerWins} to ${computerWins}`);
-        console.log(`Reload the page to play again`);
+        winner.textContent = (`Player Won ${playerWins} to ${computerWins}`);
+        winner.textContent = (`Reload the page to play again`);
       } else {
-        console.log("Game Ends in Draw Reload the page to play again");
+        winner.textContent = ("Game Ends in Draw Reload the page to play again");
       }
-    }
-  });
-});
+    });
 
 //function to play one Round of the game//
 
@@ -70,43 +63,5 @@ function playRound(computerChoice, playerChoice) {
   } else if (playerChoice === "scissors" && computerChoice === "paper") {
     return "Player";
   } else if (playerChoice === "scissors" && computerChoice === "rock") {
-    return "Computer";
-  }
-}
-
-function playGame() {
-  let computerWins = 0;
-  let playerWins = 0;
-  for (let i = 1; i <= 5; i++) {
-    let input = this.value;
-    let playerChoice = input.toLowerCase();
-    let computerChoice = getComputerChoice();
-    let roundWinner = playRound(computerChoice, playerChoice);
-    if (roundWinner === "Draw") {
-      computerWins += 1;
-      playerWins += 1;
-      span.textContent(
-        `round ${i} : is Draw : ${playerChoice} is the same as ${computerChoice}`
-      );
-    } else if (roundWinner === "Player") {
-      playerWins += 1;
-      console.log(
-        `round ${i} : is won by the Player: ${playerChoice} beats ${computerChoice}`
-      );
-    } else if (roundWinner === "Computer") {
-      computerWins += 1;
-      console.log(
-        `round ${i} : is won by the Computer: ${computerChoice} beats ${playerChoice}`
-      );
-    }
-  }
-  if (computerWins > playerWins) {
-    console.log(`Computer Won ${computerWins} to ${playerWins}`);
-    console.log(`Reload the page to play again`);
-  } else if (computerWins < playerWins) {
-    console.log(`Player Won ${playerWins} to ${computerWins}`);
-    console.log(`Reload the page to play again`);
-  } else {
-    console.log("Game Ends in Draw Reload the page to play again");
-  }
-}
+    return "Computer";}
+}});

@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock,Paper Scissors</title>
-</head>
-<body>
-    <h1>Rock Paper Scissors </h1>
-    <h3> Go to the console to play</h3>
-    <script src="index.js"></script>
-</body>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="total">
+      <h1 class="title">Rock Paper Scissors</h1>
+      <div class="contains">
+        <div class="container">
+          <div class="choices">
+            <h3 class="h3">Choose Your Battle Equipment</h3>
+            <div class="choose">
+              <div class="rock">
+                <button class="btn" id="rock" value="rock"><img src="Rock.png" alt="rock.png" /></button>
+                <h5 class="itemTitle">Rock</h5>
+              </div>
+              <div class="rock">
+                <button class="btn" id="paper" value="paper">
+                  <img src="Paper.png" alt="paper.png" />
+                </button>
+                <h5 class="itemTitle">Paper</h5>
+              </div>
+              <div class="rock">
+                <button  class="btn" id="scissors" value="scissors">
+                  <img src="Scissors.png" alt="Scissors.png" />
+                </button>
+                <h5 class="itemTitle">Scissors</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="results">
+          <h2 class="head">Result:</h2>
+          <div class="winner"></div>
+          <div class="reload">
+            <button id="reload">PLAY AGAIN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
